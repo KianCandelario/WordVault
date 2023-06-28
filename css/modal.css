@@ -35,7 +35,7 @@
     font-family: 'Quicksand', sans-serif;
 }
 
-.word-icon>h1, .word-meaning, .part-of-speech {
+.word-icon>h1, .word-meaning, .part-of-speech, .sample-sentence {
     color: #3B3B3B;
 }
 
