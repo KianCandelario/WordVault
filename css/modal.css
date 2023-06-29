@@ -11,6 +11,17 @@
     width: 35%;
     padding: 3em;
     border-radius: 2em;
+    z-index: 1;
+
+    /*Center and hides the div by setting the scale to 0*/
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 500ms ease-in-out;
+}
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .x-bttn>button {
@@ -80,4 +91,23 @@
 .sample-sentence {
     border-left: .3em solid #3B3B3B;
     padding: .5em 0 .5em 1.5em;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+
+    /* To make the overlay fit the entire screen */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: #3B3B3B;
+    pointer-events: none;
+    transition: 500ms ease-in-out;
+}
+#overlay.active {
+    opacity: 77%;
+    pointer-events: all;
 }
