@@ -115,3 +115,17 @@
     opacity: 77%;
     pointer-events: all;
 }
+
+.error {
+    display: none;
+    font-family: 'Poppins', sans-serif;
+}
+.error.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.disable {
+    display: none;
+}
