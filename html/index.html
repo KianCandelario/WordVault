@@ -32,19 +32,20 @@
             <div class="definition-container">
                 <div class="definition-wrapper">
                     <div class="word-icon">
-                        <h1>word</h1>
-                        <img src="../assets/icons/speaker-wave-2-svgrepo-com.svg">
+                        <h1 id="word"></h1>
+                        <span id="speaker-icon">
+                            <img src="../assets/icons/speaker-wave-2-svgrepo-com.svg">
+                        </span>
+                        <audio id="speaker-audio" src=""></audio>
                     </div>
                     <div class="part-of-speech">
-                        <p>adverb/&/</p>
+                        <p id="pos-phon"></p>
                     </div>
                     <div class="word-def">
                         <span class="def-title">
                             Definition
                         </span>
-                        <span class="word-meaning">
-                            definition of the word...
-                        </span>
+                        <span class="word-meaning"></span>
                     </div>
                     <div class="example">
                         <span class="ex-title">
@@ -62,5 +63,6 @@
         </div>
         <div id="overlay"></div>
         <script src="../js/modal.js"></script>
+        <script src="../js/app.js"></script>
     </body>
 </html>
