@@ -6,6 +6,7 @@ const posPhon = document.querySelector('#pos-phon');
 const wordDef = document.querySelector('.word-meaning');
 const audio = document.querySelector('#speaker-icon');
 const audioTag = document.querySelector('#speaker-audio');
+const audioIcon = document.querySelector('#audio-icon');
 const container = document.querySelector('.modal');
 const wrapperDiv = document.querySelector('.definition-wrapper');
 const srcLink = document.querySelector('.source-link');
@@ -20,7 +21,7 @@ async function fetchAPI(word) {
 
 bttn.addEventListener('click', async () => {
     try {
-        const word = wordInput.value;
+        const word = wordInput.value.toLowerCase();
         const apiData = await fetchAPI(word);
 
         const phonetics = apiData[0].phonetics[0].text;
@@ -32,7 +33,19 @@ bttn.addEventListener('click', async () => {
         desiredWord.innerHTML = word;
         posPhon.innerHTML = pos + "  &#x2022  " + phonetics;
         wordDef.innerHTML = definition;
-        audioTag.setAttribute('src', audioSrc);
+
+        // If the word entered by the user doesn't have an audio
+        if (audioSrc === '') {
+            audioIcon.setAttribute('src', '../assets/icons/mute-svgrepo-com.svg');
+            audioIcon.setAttribute('title', "This particular word doesn't have an audio");
+            audioTag.setAttribute('src', audioSrc);
+        }
+        else {
+            audioIcon.setAttribute('src', '../assets/icons/speaker-wave-2-svgrepo-com.svg');
+            audioIcon.setAttribute('title', "Click to hear the pronunciation");
+            audioTag.setAttribute('src', audioSrc);
+        }
+
         // The API doesn't have example sentences, so I decided to replace it with source link to give the user an option to look for more information about the word.
         srcLink.innerHTML = link;
 
@@ -42,7 +55,6 @@ bttn.addEventListener('click', async () => {
         error.classList.add('active');
         wrapperDiv.classList.add('disable');
     }
-
 });
 
 audio.addEventListener('click', () => {
