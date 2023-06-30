@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     background-color: #FFF5E4;
-    width: 35%;
+    width: 40%;
     padding: 3em;
     border-radius: 2em;
     z-index: 1;
@@ -22,6 +22,10 @@
 }
 .modal.active {
     transform: translate(-50%, -50%) scale(1);
+}
+
+.definition-container, .definition-wrapper, .source {
+    width: 100%;
 }
 
 .x-bttn>button {
@@ -39,24 +43,24 @@
 
 .word-icon {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
-.word-icon>h1, .part-of-speech, .def-title, .word-meaning, .ex-title, .sample-sentence {
+.word-icon>h1, .part-of-speech, .def-title, .word-meaning, .source-title, .source-link {
     font-family: 'Quicksand', sans-serif;
 }
 
-.word-icon>h1, .word-meaning, .part-of-speech, .sample-sentence {
+.word-icon>h1, .word-meaning, .part-of-speech, .source-link {
     color: #3B3B3B;
 }
 
-.def-title, .ex-title {
+.def-title, .source-title {
     color: #595959;
 }
 
 .word-icon>h1 {
     font-size: 2.5em;
-    margin-right: 1.5em;
+    margin-right: 1em;
 }
 
 #speaker-icon>img:hover {
@@ -68,7 +72,7 @@
     font-weight: 300;
 }
 
-.word-def, .example {
+.word-def, .source {
     display: flex;
     flex-direction: column;
     margin-top: 1.5em;
@@ -83,14 +87,14 @@
     margin-left: 1em;
 }
 
-.ex-title {
+.source-title {
     margin-bottom: .7em;
     font-size: .9em;
 }
 
-.sample-sentence {
+.source-link {
     border-left: .3em solid #3B3B3B;
-    padding: .5em 0 .5em 1.5em;
+    padding: .5em 1em .5em 1.5em;
 }
 
 #overlay {
