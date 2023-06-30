@@ -2,12 +2,21 @@
 const searchButton = document.querySelector('#search-bttn');
 const closeButton = document.querySelector('#close-bttn');
 const outer = searchButton.closest('.layout');
+const defWrapper = document.querySelector('.definition-wrapper');
+const errorDiv = document.querySelector('.error');
 const modal = outer.nextElementSibling;
 const overlay = modal.nextElementSibling;
 
 // Event Listeners
 searchButton.addEventListener('click', () => {
-    triggerModal(modal, overlay);
+    if (defWrapper.classList.contains('disable') & error.classList.contains('active')) {
+        defWrapper.classList.remove('disable');
+        errorDiv.classList.remove('active');
+        triggerModal(modal, overlay);
+    }
+    else {
+        triggerModal(modal, overlay);
+    }
 });
 
 closeButton.addEventListener('click', () => {
