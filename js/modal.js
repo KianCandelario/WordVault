@@ -9,7 +9,7 @@ const overlay = modal.nextElementSibling;
 
 // Event Listeners
 searchButton.addEventListener('click', () => {
-    if (defWrapper.classList.contains('disable') & errorDiv.classList.contains('active')) {
+    if (defWrapper.classList.contains('disable') && errorDiv.classList.contains('active')) {
         defWrapper.classList.remove('disable');
         errorDiv.classList.remove('active');
         triggerModal(modal, overlay);
