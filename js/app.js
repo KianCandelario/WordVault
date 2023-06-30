@@ -9,6 +9,7 @@ const audioTag = document.querySelector('#speaker-audio');
 const container = document.querySelector('.modal');
 const wrapper = document.querySelector('.definition-wrapper');
 const errorDiv = document.querySelector('.error');
+const srcLink = document.querySelector('.source-link');
 
 // Fetching API
 async function fetchAPI(word) {
@@ -26,19 +27,27 @@ bttn.addEventListener('click', async () => {
         const pos = apiData[0].meanings[0].partOfSpeech;
         const definition = apiData[0].meanings[0].definitions[0].definition;
         const audioSrc = apiData[0].phonetics[0].audio;
+        const link = apiData[0].sourceUrls[0];
         
         desiredWord.innerHTML = word;
         posPhon.innerHTML = pos + "  &#x2022  " + phonetics;
         wordDef.innerHTML = definition;
         audioTag.setAttribute('src', audioSrc);
-
+        // The API doesn't have example sentences, so I decided to replace it with source link to give the user an option to look for more information about the word.
+        srcLink.innerHTML = link;
+        
         wordInput.value = '';
     } catch {
         wordInput.value = '';
+        alert("Couldn't find the word");
     }
 
 });
 
 audio.addEventListener('click', () => {
-    audioTag.play();
+    try {
+        audioTag.play();
+    } catch {
+        alert("This particular word doesn't have audio");
+    }
 });
