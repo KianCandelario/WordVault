@@ -1,6 +1,6 @@
 @import url(../assets/fonts/imports.css);
 
-.word-icon>img {
+#speaker-icon>img {
     width: 1.5em;
 }
 
@@ -59,7 +59,7 @@
     margin-right: 1.5em;
 }
 
-.word-icon>img:hover {
+#speaker-icon>img:hover {
     cursor: pointer;
 }
 
